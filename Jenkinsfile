@@ -105,20 +105,6 @@ pipeline {
                 }
             }
         }
-        
-        // Add this new stage
-        stage('Update Kubernetes Manifests') {
-            steps {
-                script {
-                    update_k8s_manifests(
-                        imageTag: env.DOCKER_IMAGE_TAG,
-                        manifestsPath: 'kubernetes',
-                        gitCredentials: 'github-credentials',
-                        gitUserName: 'Jenkins CI',
-                        gitUserEmail: 'myptech08@gmail.com'
-                    )
-                }
-            }
-        }
+              
     }
 }
